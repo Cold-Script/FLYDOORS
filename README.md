@@ -1,21 +1,9 @@
 --[[
-FE Mobile Fly By Fedoratum#6195
+FE Mobile Fly By Rechedmcvn
 
 Type in chat !stop, to stop the script
 
 ]]--
-
-local STARTERGUI = game:GetService("StarterGui")
-
-if game:GetService("ReplicatedStorage"):FindFirstChild("BZn2q91BzN") then
-STARTERGUI:SetCore("SendNotification",{
-        Title = "FED's Mobile Fly",
-        Text = "Script is already running",
-         Icon = "rbxassetid://278315432",
-         Duration = 4
-    })
-return
-end
 
 local ScreenGui = Instance.new("ScreenGui")
 local FlyButton = Instance.new("TextButton")
@@ -39,8 +27,6 @@ end
 
 local VdbwjS = Instance.new("StringValue",game:GetService("ReplicatedStorage"))
 VdbwjS.Name = "BZn2q91BzN"
-
-Notify("Script made by fedoratum", 5)
 
 local plr = game:GetService"Players"
 local Lp = plr.LocalPlayer
