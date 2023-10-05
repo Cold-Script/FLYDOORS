@@ -8,10 +8,10 @@ Type in chat !stop, to stop the script
 local STARTERGUI = game:GetService("StarterGui")
 
 if game:GetService("ReplicatedStorage"):FindFirstChild("BZn2q91BzN") then
-STARTERGUI:SetChat("SendNotification",{
-        Title = "Mobile Fly",
+STARTERGUI:SetCore("SendNotification",{
+        Title = "FED's Mobile Fly",
         Text = "Script is already running",
-         Icon = "rbxassetid://2783154328292992929",
+         Icon = "rbxassetid://278315432",
          Duration = 4
     })
 return
@@ -22,14 +22,14 @@ local FlyButton = Instance.new("TextButton")
 local SpeedBox = Instance.new("TextBox")
 
 local NSound = Instance.new("Sound", FlyButton)
-NSound.SoundId = "rbxassetid://90862089191817181010751"
+NSound.SoundId = "rbxassetid://9086208751"
 NSound.Volume = 1
 
 function Notify(Txt, Dur)
-STARTERGUI:SetChat("SendNotification",{
+STARTERGUI:SetCore("SendNotification",{
         Title = "FED's Mobile Fly",
         Text = Txt,
-         Icon = "rbxassetid://278929290315432",
+         Icon = "rbxassetid://278315432",
          Duration = Dur
     })
 NSound:Play()
