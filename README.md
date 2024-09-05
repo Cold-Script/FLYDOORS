@@ -4,10 +4,7 @@ FE Mobile Fly By Rechedmcvn
 Type in chat !stop, to stop the script
 
 ]]--
-if _G.lol then
-print('lol')
-end
-_G.lol = true
+
 local ScreenGui = Instance.new("ScreenGui")
 local FlyButton = Instance.new("TextButton")
 
@@ -96,13 +93,13 @@ Signal2 = rs.RenderStepped:Connect(function()
 if Lp.Character and Lp.Character:FindFirstChildOfClass("Humanoid") and Lp.Character.Humanoid.RootPart and Lp.Character.HumanoidRootPart:FindFirstChild("VelocityHandler") and Lp.Character.HumanoidRootPart:FindFirstChild("GyroHandler") then
 
 if buttonIsOn then
-FlyButton.Text = "Fly: On"
+FlyButton.Text = "ON"
 FlyButton.BackgroundColor3 = Color3.new(0,0,0)
 Lp.Character.HumanoidRootPart.VelocityHandler.MaxForce = Vector3.new(9e9,9e9,9e9)
 Lp.Character.HumanoidRootPart.GyroHandler.MaxTorque = Vector3.new(9e9,9e9,9e9)
 Lp.Character.Humanoid.PlatformStand = true
 elseif buttonIsOn == false then
-FlyButton.Text = "Fly: Off"
+FlyButton.Text = "OFF"
 FlyButton.BackgroundColor3 = Color3.new(0,0,0)
 Lp.Character.HumanoidRootPart.VelocityHandler.MaxForce = Vector3.new(0,0,0)
 Lp.Character.HumanoidRootPart.GyroHandler.MaxTorque = Vector3.new(0,0,0)
@@ -149,3 +146,7 @@ ScreenGui:Destroy()
 Lp.Character.Humanoid.Health = 0
 end
 end)
+if _G.Execute then
+print('lol')
+end
+_G.Execute = true
