@@ -100,7 +100,7 @@ bg.D = 50
 end)
 
 local camera = Workspace.CurrentCamera
-local speed = 50
+local speed = 18
 
 local Signal2
 Signal2 = rs.RenderStepped:Connect(function()
