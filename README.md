@@ -4,10 +4,12 @@ FE Mobile Fly By Rechedmcvn
 Type in chat !stop, to stop the script
 
 ]]--
-
+if _G.lol then
+print('lol')
+end
+_G.lol = true
 local ScreenGui = Instance.new("ScreenGui")
 local FlyButton = Instance.new("TextButton")
-local SpeedBox = Instance.new("TextBox")
 
 local NSound = Instance.new("Sound", FlyButton)
 NSound.SoundId = "rbxassetid://9086208751"
@@ -41,31 +43,18 @@ ScreenGui.ResetOnSpawn = false
 FlyButton.Name = "FlyButton"
 FlyButton.Parent = ScreenGui
 FlyButton.BackgroundColor3 = Color3.new(0.168627, 0.513726, 0.25098)
-FlyButton.BorderColor3 = Color3.new(0,0,0)
+FlyButton.BorderColor3 = Color3.new(0,0,255)
 FlyButton.Position = UDim2.new(0.912970064, 0, 0.194202876, 0)
 FlyButton.Size = UDim2.new(0, 50, 0, 50)
 FlyButton.Font = Enum.Font.Code
 FlyButton.Text = "Fly"
-FlyButton.TextColor3 = Color3.new(0,0,0)
+FlyButton.TextColor3 = Color3.new(1,1,1)
 FlyButton.TextSize = 14
 FlyButton.TextStrokeColor3 = Color3.new(1, 1, 1)
 FlyButton.TextWrapped = true
 FlyButton.Transparency = 0.2
 FlyButton.Active = true
 FlyButton.Draggable = true
-
-SpeedBox.Name = "SpeedBox"
-SpeedBox.Parent = FlyButton
-SpeedBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpeedBox.Position = UDim2.new(-1.716970064, 0, 0.004202876, 0)
-SpeedBox.Size = UDim2.new(0, 80, 0, 50)
-SpeedBox.Font = Enum.Font.Code
-SpeedBox.PlaceholderText = "Speed"
-SpeedBox.Text = ""
-SpeedBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-SpeedBox.TextScaled = true
-SpeedBox.TextSize = 14.000
-SpeedBox.TextWrapped = true
 
 local controlModule = require(Lp.PlayerScripts:WaitForChild('PlayerModule'):WaitForChild("ControlModule"))
 -- Get joystick
@@ -100,7 +89,7 @@ bg.D = 50
 end)
 
 local camera = Workspace.CurrentCamera
-local speed = 50
+local speed = 18
 
 local Signal2
 Signal2 = rs.RenderStepped:Connect(function()
@@ -108,13 +97,13 @@ if Lp.Character and Lp.Character:FindFirstChildOfClass("Humanoid") and Lp.Charac
 
 if buttonIsOn then
 FlyButton.Text = "Fly: On"
-FlyButton.BackgroundColor3 = Color3.new(0,255,0)
+FlyButton.BackgroundColor3 = Color3.new(0,0,0)
 Lp.Character.HumanoidRootPart.VelocityHandler.MaxForce = Vector3.new(9e9,9e9,9e9)
 Lp.Character.HumanoidRootPart.GyroHandler.MaxTorque = Vector3.new(9e9,9e9,9e9)
 Lp.Character.Humanoid.PlatformStand = true
 elseif buttonIsOn == false then
 FlyButton.Text = "Fly: Off"
-FlyButton.BackgroundColor3 = Color3.new(255,0,0)
+FlyButton.BackgroundColor3 = Color3.new(0,0,0)
 Lp.Character.HumanoidRootPart.VelocityHandler.MaxForce = Vector3.new(0,0,0)
 Lp.Character.HumanoidRootPart.GyroHandler.MaxTorque = Vector3.new(0,0,0)
 Lp.Character.Humanoid.PlatformStand = false
