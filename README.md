@@ -148,5 +148,6 @@ end
 end)
 if _G.Execute then
 print('lol')
+return
 end
 _G.Execute = true
