@@ -1,3 +1,9 @@
+if _G.Execute then
+print('lol')
+return
+end
+_G.Execute = true
+
 --[[
 FE Mobile Fly By Rechedmcvn
 
@@ -49,7 +55,7 @@ FlyButton.TextColor3 = Color3.new(1,1,1)
 FlyButton.TextSize = 14
 FlyButton.TextStrokeColor3 = Color3.new(1, 1, 1)
 FlyButton.TextWrapped = true
-FlyButton.Transparency = 0.2
+FlyButton.Transparency = 0
 FlyButton.Active = true
 FlyButton.Draggable = true
 
@@ -146,8 +152,3 @@ ScreenGui:Destroy()
 Lp.Character.Humanoid.Health = 0
 end
 end)
-if _G.Execute then
-print('lol')
-return
-end
-_G.Execute = true
